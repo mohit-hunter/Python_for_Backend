@@ -1,4 +1,4 @@
-# Python Intern Assignment - ADStack Backend Development
+# Python Backend Development Assignment
 
 ## Project Overview
 This project demonstrates a comprehensive backend development solution with Flask API, database management, Android system simulation, and networking capabilities.
@@ -7,19 +7,26 @@ This project demonstrates a comprehensive backend development solution with Flas
 - Python 3.8+
 - pip (Python Package Manager)
 - Virtual Environment (recommended)
+- Git
+- Android SDK (optional, for Android simulation)
 
 ## Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd python-intern-assignment
+git clone https://github.com/mohit-hunter/Python_for_Backend.git
+cd Python_for_Backend
 ```
 
 ### 2. Create Virtual Environment
 ```bash
+# On Windows
 python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+venv\Scripts\activate
+
+# On macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ### 3. Install Dependencies
@@ -27,28 +34,159 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### 4. Task-wise Execution
 
-#### Backend API (Task 1 & 2)
+## Task-Specific Instructions
+
+### Task 1: Backend API
+#### Running the API
 ```bash
+# Navigate to backend directory
+cd src/backend
+
+# Run the Flask API
 python backend_api.py
-# Access API at http://localhost:5000
 ```
 
-#### Android System Simulation (Task 3)
-```bash
-python android_simulation.py
-```
-
-#### Networking Script (Task 4)
-```bash
-python networking_script.py
-```
-
-## Endpoint Details
-- `POST /add-app`: Add app details
+#### API Endpoints
+- `POST /add-app`: Add new app details
+  - Payload: `{"app_name": "MyApp", "version": "1.0.0", "description": "Sample app"}`
 - `GET /get-app/<id>`: Retrieve app by ID
 - `DELETE /delete-app/<id>`: Delete app by ID
+
+### Task 2: Database Management
+#### Initialize Database
+```bash
+# Navigate to database directory
+cd src/database
+
+# Run database creation script
+python database_manager.py
+```
+
+#### Database Features
+- Creates SQLite database
+- Inserts sample app data
+- Provides basic database initialization
+
+### Task 3: Android System Simulation
+#### Running Android Simulator
+```bash
+# Navigate to android simulation directory
+cd src/android_simulation
+
+# Run the Android simulator script
+python android_simulator.py
+```
+
+#### Simulator Capabilities
+- Creates virtual Android environment
+- Retrieves system information
+- Supports APK installation simulation
+
+#### Prerequisites
+- Android SDK
+- QEMU (Android Emulator)
+
+### Task 4: Networking
+#### Running Network Manager
+```bash
+# Navigate to networking directory
+cd src/networking
+
+# Run the network management script
+python network_manager.py
+```
+
+#### Network Features
+- Generates device information
+- Sends data to backend API
+- Performs TCP connection test
+
+## Testing
+```bash
+# Run pytest for all modules
+pytest
+```
+
+## Troubleshooting
+### Common Issues
+1. **Dependency Errors**
+   - Ensure all dependencies are installed
+   - Check Python version compatibility
+
+2. **Database Connection**
+   - Verify SQLite installation
+   - Check file permissions
+
+3. **Android Simulation**
+   - Ensure Android SDK is installed
+   - Verify QEMU configuration
+
+## Environment Configuration
+
+### Virtual Environment
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Environment Variables
+Create a `.env` file in the project root:
+```
+FLASK_APP=src/backend/backend_api.py
+FLASK_ENV=development
+DATABASE_URL=sqlite:///apps.db
+```
+
+## Deployment Considerations
+- Use production WSGI server (Gunicorn, uWSGI)
+- Configure proper database backend
+- Implement authentication and security measures
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+Mohit Kumar - [Your Email]
+Project Link: https://github.com/mohit-hunter/Python_for_Backend
+
+## Acknowledgements
+- Flask
+- SQLAlchemy
+- Python Community
+```
+
+I've created a comprehensive README that:
+1. Provides step-by-step setup instructions
+2. Explains project structure
+3. Gives detailed instructions for each task
+4. Includes troubleshooting tips
+5. Offers guidance on testing and deployment
+6. Provides a template for contributing
+
+Key Features:
+- Clear, concise instructions
+- Covers multiple operating systems
+- Includes troubleshooting section
+- Explains how to run each component
+- Provides environment setup guidance
+```
 
 # Python Backend Development Assignment Documentation
 
