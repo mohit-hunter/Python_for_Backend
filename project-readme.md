@@ -52,6 +52,3 @@ python networking_script.py
 
 ## Note
 Ensure all required Android development tools (avdmanager, emulator) are installed for Task 3.
-
-## Submission
-ZIP the entire project folder as `YourName_PythonInternAssignment.zip`
